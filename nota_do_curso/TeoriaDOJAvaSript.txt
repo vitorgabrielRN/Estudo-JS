@@ -1,0 +1,353 @@
+coisas pra anotar do node.js
+
+pwd pra achar o path para rodar o node
+
+touch para criar um arquivo dentro da pasta(não sei se isso é algo do windows ou do visualStudiocode)
+
+para executar os aquivos no node é necessario apenas escrever " node 'nome_do_arquivo.js' no terminal, ai vai rodar tranquilamente.
+
+
+ variaveis
+ 
+ instanciar algo sem nada ele vira uma variavel global 
+ 
+ var é outro modo de baixo uso. (-) 
+ 
+ let mais atualizado e permite o encapsulamento das coisas (forma atualizada e necessaria)
+ 
+ const é constante e não pode ser alterado depois disso
+ 
+ --------------------------------------------------------------------
+ 
+ 
+ Hoisting: é um erro de referência. 
+ 
+ Ele acontece quando o usuario tenta imprimir uma variavel antes dela ser declarada.
+ Ocasionando um erro de referencia.
+ 
+variaveis globais não pode ser referenciada antes da declaração
+-----
+var pode
+-----
+let, cont não pode ser referenciada antes da inicialização delas.
+	
+-----------	-------------------------------
+	
+	Typeof  = vai dizer o tipo de uma variavel 
+	
+	então, ele diz o nome da variavel pra identificar o tipo dela
+	
+	ex:
+	 let nome = 'ana'
+	 let idade = 23
+	 
+	 console.log(typeof nome )
+	 console.log(typeof idade )
+	 console.log(typeof boolean )
+	 vai imprimir todo os tipos das variaveis
+	 
+	 -----------------------------
+	 null é um tipo de object 
+	 ---------------------------------------------------------------
+	 
+	 Operadores aritimeticos
+	 
+	 são os padrões mais comuns que tem sempre
+
+     alguns detalhes legais que tem, acho que não existe em outras.
+	 
+	 Incremento//Decremento, algo que ficava meio confuso atoa.
+	 ex: contador ++ \ contador -- 
+	 
+	 tem como tbm diretamente na função tipo
+	    
+		 let numero = 3
+		 let numero  += 3
+
+	 ai soma diretamente bem bacana.
+	 ----------------------------------------------------------
+	 
+	 
+	 Operadores de Comparação
+	 
+    operador de igualdade (==)	
+    operador maior que (>)
+    operador menor que (<)
+	operador maior ou igual (>=)
+	operador menor ou igual (<=)
+	
+	
+	para igualar o ( == ) para verificar se comparado.
+	 
+	 const idadeVinny = 35
+	 const minhaIdade = 25
+	 
+	 const saoIguais = idadeVinny == minhaIdade
+	 
+	 const comparacaao = idadeVinny > minhaIdade
+	 
+	 const souMaiorDeIdade = Minhaidade >= 18  
+              TRUE	 
+	 const vynnEMaiorDeIdade = idadeVinny >= 18
+	          TRUE
+	
+	ai como são boolean, vai dar false ou true
+	 
+	comparação estrita
+	operador comparacaao estrita (====)
+	
+	 const comparacaoEstrita = minhaIdade === idadeVinny
+	
+	comparacaao estrita diferente
+	 const saoIguais = idadeVinny !=== minhaIdade
+
+	Comparação para saber se é diferente 
+	operador de diferença vai tentar converter 
+	
+	 const comparacaao = idadeVinny != minhaIdade
+	
+	------------------------------------------------------------
+	
+	Por que usar a tabela verdade?
+
+A tabela verdade ajuda você a visualizar 
+claramente o resultado das suas expressões lógicas. 
+Sempre que tiver dúvida sobre como uma expressão será avaliada,
+ monte rapidamente uma tabela verdade como as que vimos.
+
+Com essa ferramenta, seu código ficará mais claro,
+ você entenderá melhor as condições que está criando, 
+ e evitará bugs ou comportamentos inesperados. 
+	
+	Entendendo AND, OR, NOT e &&(bastante importante isso daqui ein!!!!)
+	
+	Operadores AND = && , (e ou é ( para alguem dirigir ele tem 
+	                       que ser maiorDeIdade && possuiCNH)) 
+						   
+	Operadores OR  = || ,(esse representa  o OU, ex: para viajar sozinho tem 
+	                     que ser maiorDeIdade || possuiCNH)
+	
+	Operadores NOT = ! , (esse aqui é o de negacao, invertido, 
+	         ex: precisaDeAcompanhante precisa verificar idadeDaPessoa, 
+			  se for menorDeIdade vai ser true, 
+			  se for maior vai ser false)  
+	
+	combinandoComparadores
+	const idade = 15
+	
+	verificar se é maior de idade
+	const maiorDeIdade = idade >= 18
+	
+	const possuiCNH = false
+	
+	       operador AND ( && )
+	const podeDirigir = maiorDeIdade && possuiCNH.
+	
+
+   Veja a tabela verdade para o operador lógico E:
+
+| Condição A | Condição B | Resultado A && B |
+
+| ---------- | ---------- | ---------------- |
+
+| true | true | true ✅ |
+
+| true | false | false ❌ |
+
+| false | true | false ❌ |
+
+| false | false | false ❌ | 
+	       
+		   operador OR  ( || )
+	const podeViajarSoziha = maiorDeIdade || possuiCNH
+  Agora veja a tabela verdade para o operador lógico OU:
+
+| Condição A | Condição B | Resultado A || B |
+
+| ---------- | ---------- | ------------------ |
+
+| true | true | true ✅ |
+
+| true | false | true ✅ |
+
+| false | true | true ✅ |
+
+| false | false | false ❌ | 
+	       
+		   operador NOT  ( ! )
+		  const minhaIdade = 17
+	const precisaDeAcompanhante = !maiorDeIdade  = true	 
+	      const minhaIdade = 19
+	const precisaDeAcompanhante = !minhaIdade    = false 
+	
+Veja como funciona o operador lógico NÃO:
+
+| Condição | Resultado !Condição |
+
+| -------- | ------------------- |
+
+| true | false ❌ |
+
+| false | true ✅ |
+
+
+
+da pra combinar tudo 
+
+  maiorDeIdade && possuiCNH || !precisaDeAcompanhante	
+  -----------------------------------------------------------------------------
+  PREFIX E POSFIXX 
+   IMPORTANTE LEVAR EM CONSIDERAÇÃO
+  
+Embora os operadores de incremento (++) e decremento (--) sejam frequentemente utilizados de maneira simples, 
+há uma distinção importante entre suas formas prefixada e posfixada. Essa diferença sutil pode afetar a 
+ordem de avaliação e o resultado das expressões em que estão inseridos.
+Funcionamento da Forma Prefixada
+
+Na forma prefixada, 
+
+
+o operador é colocado antes da variável. 
+Isso faz com que o valor da variável seja imediatamente alterado e, 
+em seguida, seu novo valor é utilizado na expressão. Em outras palavras, 
+o incremento ou decremento acontece antes que o valor seja retornado. 
+Esse comportamento é útil quando se deseja que a modificação ocorra previamente à utilização da variável.
+
+  EX: 
+  let contador = 5;
+console.log(++contador); // imprime 6, pois a variável é incrementada antes da impressão
+
+Funcionamento da Forma Posfixada
+
+Já na forma posfixada, o operador vem depois da variável. 
+esse caso, o valor original da variável é utilizado na expressão e somente depois ocorre 
+a atualização do seu valor. Dessa forma, se o valor da variável for necessário na mesma 
+expressão em que há a atualização, o valor antigo será retornado.
+
+EX:
+let contador = 5;
+console.log(contador++); // imprime 5 e só depois incrementa; ao final, contador passa a valer 
+
+Impactos na Ordem de Avaliação
+
+A escolha entre prefix e postfix pode ser fundamental em expressões mais complexas, 
+especialmente quando o operador faz parte de cálculos ou quando é utilizado em um contexto onde a ordem dos 
+efeitos colaterais é crucial. Compreender essa diferença pode prevenir resultados inesperados e ajudar a 
+escrever um código mais claro e previsível.
+
+Por exemplo, considerando a seguinte expressão:
+
+let a = 3;
+let b = a++ + 2; // aqui b recebe 5, pois a++ retorna 3 e só depois a se torna 4
+
+Se a forma prefixada fosse utilizada, o comportamento seria diferente:
+
+let a = 3;
+let b = ++a + 2; // agora, a é incrementada antes da soma, b recebe 6
+
+Considerações Finais
+
+ Apesar de parecer uma distinção pequena, escolher a forma correta pode ser decisivo na 
+ obtenção do comportamento desejado na lógica do programa. A forma prefixada garante que a
+ variável já esteja atualizada quando usada, enquanto a forma posfixada preserva o valor 
+ original na avaliação da expressão, aplicando a atualização posteriormente.
+
+Dessa forma, identificar o momento exato em que a variável precisa ser alterada é essencial 
+para escrever códigos mais eficientes e evitar erros difíceis de diagnosticar. Essa compreensão
+profunda auxilia na manutenção e clareza do código em projetos de complexidade crescente.
+----------------------------------------------------------------------------
+ DESAFIO DE CALCULADORA DE TROCO
+ 
+ console.log('Boas vindas a calculadora de troco')
+
+let valorCompra = 15.50;
+let valorPago = 20;
+
+let troco = valorCompra - valorPago;
+
+console.log('troco é ', troco)
+
+DESAFIO DE verificar MAIORIDADE
+let idade = 18
+const maiorDeIdade = idade >= 18
+console.log('é maior de idade', maiorDeIdade)
+
+DESAFIO DE situacao do aluno
+
+let nota1 = 5
+let nota2 = 10
+let nota3 = 8
+let media = nota1 + nota2 + nota3 / 3
+
+console.log('A media é  ', media )
+
+DESAFIO DE VALIDAÇÃO DE SENHA
+let senhaDigitada  = 12345
+let senhaDigitadaDepois  = 123445
+
+let senha = senhaDigitada === senhaDigitadaDepois
+console.log('senha está correta  ', senha)
+
+DESAFIO DE CONTROLE DE FALTAS
+	let totalAulas = 80;
+	let faltas = 25;
+
+
+	let SomaDeFaltas = totalAulas * 0.25;
+	if(faltas > SomaDeFaltas){
+		console.log("Faltas acima do permitido")
+	} else {
+		console.log("Dentro DO permitido")
+	}
+----------------------------------------------------------------------------------
+REVISÃO ORDENS DE OPERADORES
+Vamos relembrar rapidamente a ordem das operações matemáticas, 
+pois elas são a base para entender como isso funciona no JavaScript:
+  
+    Parênteses ( ) – Tudo que estiver entre parênteses é executado primeiro;
+    Multiplicação * e Divisão /;
+    Adição + e Subtração -;
+    Operadores de comparação (>, <, >=, <=, ==, !=);
+
+    Operadores lógicos:
+    NÃO (!)
+    E (&&)
+    OU (||)
+------------------------------------------------------------------------------------------
+ENTENDENDO IF, ELSE IF E ELSE
+jaja começa o inferno que é apender arrays e lists, aprender a fazer map	
+	
+	Condicionais 
+
+const idade = 17
+
+idade >= 18
+
+  IF exemplo  de if (se elgo é ) dentro do parentese é dentro é 
+             onde fica as condições 
+if(idade >= 18){
+	console.log("è Maior de idade", idade)
+}
+if(idade < 18) {
+   console.log("è Menor de idade", idade)
+}
+ -------------agora com else é  ------------------------------------
+if(idade >= 18){
+	console.log("è Maior de idade", idade)
+} else {
+   console.log("è Menor de idade", idade)
+}
+
+const notaDoAluno = 5
+
+if(notaDoAluno >= 9) {
+	console.log('nota execelente')
+} else if (notaDoAluno >= 7){
+	console.log('nota Boa')
+} else if(notaDoAluno >= 4){
+	console.log('nota ruim')
+} else if (notaDoAluno <3){
+	console.log('Reprovado')
+	
+}
+

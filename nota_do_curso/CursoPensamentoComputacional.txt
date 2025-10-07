@@ -1,0 +1,26 @@
+Pensamento computacional.
+
+AULA 02 - 
+Decomposição de problemas e facilitação das coisas.
+
+separar as coisas de maneira para facilitar as coisas
+
+então, essa aula foi mais focada em sustentabilidade e reforço. 
+tipo, você não necessariamente é obrigado a utilizar e saber de todos os tipos e formas para aprender as coisas.
+e que está tudo bem simplesmente pegar um teamplate e modificar para se adequar ao que precisa.
+
+----------------------------------
+Abstração, como vai funcionar ein?
+
+basicamente focar no essencial, 
+criação de representações simplificadas,
+facilitaçã de organização,
+criaçãode grandes sistemas
+
+saquei de como funciona abstração
+ 
+ ---------------------
+ 
+ Elaborando algoritmos
+ 
+ 

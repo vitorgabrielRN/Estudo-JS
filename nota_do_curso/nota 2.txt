@@ -1,0 +1,29 @@
+AutorizacaoServicoRepository (O Ponto Central):
+
+O AutorizacaoServicoRepository precisa receber o novo LogFirebaseDao para poder salvar os logs. Dentro da sua função enviarLista, ele vai adicionar a nova lógica: depois que a chamada para a API principal der sucesso, ele vai usar o LogFirebaseDao para salvar os dados como um log e depois vai chamar o WorkManager para agendar o envio para o Firebase.
+
+Importante: Ele não precisa de uma nova função para a ViewModel. A nova lógica é um detalhe interno que acontece de forma transparente para o resto do app.
+
+LogFirebase e LogFirebaseDao (As Novas Peças do Banco de Dados):
+
+Precisamos criar a nova classe/tabela LogFirebase para servir como a nossa "caixa de saída" de logs.
+
+Precisamos criar a interface LogFirebaseDao para que o Repository e o Worker tenham uma forma de conversar com essa nova tabela (salvar, buscar, atualizar).
+
+SincronizadorFirebaseWorker (O "Carteiro"):
+
+Precisamos criar a classe SincronizadorFirebaseWorker. A única função dela é ser chamada pelo sistema (WorkManager) quando tiver internet.
+
+Ela vai usar o LogFirebaseDao para pegar os logs pendentes da "caixa de saída" e vai entregá-los (enviá-los) para o Firestore.
+
+AppDatabase (O "Gerente" do Banco):
+
+A classe AppDatabase precisa ser atualizada para que ela reconheça a existência da nova tabela LogFirebase e do seu LogFirebaseDao.
+
+DatabaseModule (A "Fábrica" de Peças):
+
+O módulo de injeção de dependência (DatabaseModule) precisa ser ajustado para saber como criar e fornecer o LogFirebaseDao para quem o solicitar (como o AutorizacaoServicoRepository).
+
+DetalhesDoServicoViewModel (Não Muda Nada):
+
+A ViewModel não precisa de nenhuma alteração. Ela continuará chamando o Repository como sempre fez, sem saber que um log está sendo gerado. Isso mantém o código bem organizado.
